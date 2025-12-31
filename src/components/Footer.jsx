@@ -259,25 +259,12 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="section-container py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex justify-center items-center">
             {/* Copyright */}
             <div className="flex items-center text-gray-400 text-sm">
               <span>© 2025 Pet Buddy. Made with</span>
               <Heart className="w-4 h-4 mx-1 text-red-500 fill-red-500" />
-              <span>in Sri Lanka</span>
-            </div>
-
-            {/* Legal Links */}
-            <div className="flex items-center gap-6">
-              {footerLinks.legal.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="text-gray-400 text-sm hover:text-primary-400 transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
+              <span>in Sri Lanka by Cheshanth</span>
             </div>
           </div>
         </div>
