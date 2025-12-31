@@ -7,7 +7,9 @@ import React, { useState, useEffect } from 'react'
 import { Menu, X, PawPrint } from 'lucide-react'
 
 const Navbar = () => {
+  // State for mobile menu toggle
   const [isOpen, setIsOpen] = useState(false)
+  // State for navbar background on scroll
   const [isScrolled, setIsScrolled] = useState(false)
 
   // Navigation links
@@ -36,7 +38,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-background/80 backdrop-blur-md shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-white/5'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
           : 'bg-transparent'
         }`}
     >
@@ -44,11 +46,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#home" className="flex items-center space-x-2 group">
-            <div className="p-2 bg-primary-neon/20 rounded-xl group-hover:bg-primary-neon/30 transition-colors border border-primary-neon/50 shadow-[0_0_10px_rgba(0,242,234,0.3)]">
-              <PawPrint className="w-6 h-6 text-primary-neon" />
+            <div className="p-2 bg-primary-500 rounded-xl group-hover:bg-primary-600 transition-colors">
+              <PawPrint className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-bold text-white tracking-wider">
-              Pet<span className="text-primary-neon drop-shadow-[0_0_5px_rgba(0,242,234,0.5)]">Buddy</span>
+            <span className="text-xl font-bold text-gray-800">
+              Pet<span className="text-primary-500">Buddy</span>
             </span>
           </a>
 
@@ -58,10 +60,10 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-primary-neon font-medium transition-colors relative group py-2"
+                className="text-gray-600 hover:text-primary-500 font-medium transition-colors relative group"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary-neon group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(0,242,234,0.8)]" />
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-500 group-hover:w-full transition-all duration-300" />
               </a>
             ))}
             <a href="#contact" className="btn-primary">
@@ -71,30 +73,30 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-white/10 text-white transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6 text-gray-800" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 text-gray-800" />
             )}
           </button>
         </div>
 
         {/* Mobile Navigation Menu */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-300 bg-background/95 backdrop-blur-xl border-b border-white/10 ${isOpen ? 'max-h-96 pb-4' : 'max-h-0'
+          className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-4' : 'max-h-0'
             }`}
         >
-          <div className="flex flex-col space-y-4 pt-4 px-4">
+          <div className="flex flex-col space-y-4 pt-4 border-t border-gray-100">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={handleLinkClick}
-                className="text-gray-300 hover:text-primary-neon font-medium transition-colors px-2 py-2 border-l-2 border-transparent hover:border-primary-neon hover:bg-white/5"
+                className="text-gray-600 hover:text-primary-500 font-medium transition-colors px-2 py-2"
               >
                 {link.name}
               </a>
@@ -102,7 +104,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={handleLinkClick}
-              className="btn-primary text-center mt-4"
+              className="btn-primary text-center"
             >
               Get Started
             </a>

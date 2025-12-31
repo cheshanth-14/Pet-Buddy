@@ -5,97 +5,93 @@
 
 /* Base styles */
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+    html {
+        scroll-behavior: smooth;
+    }
 
-  body {
-    @apply font-sans antialiased text-gray-200 bg-background;
-    background-image:
-      radial-gradient(circle at 15% 50%, rgba(20, 184, 166, 0.08), transparent 25%),
-      radial-gradient(circle at 85% 30%, rgba(176, 38, 255, 0.08), transparent 25%);
-  }
+    body {
+        @apply font-sans antialiased text-gray-800 bg-white;
+    }
 
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
 
-  ::-webkit-scrollbar-track {
-    @apply bg-background;
-  }
+    ::-webkit-scrollbar-track {
+        @apply bg-gray-100;
+    }
 
-  ::-webkit-scrollbar-thumb {
-    @apply bg-primary-600 rounded-full;
-  }
+    ::-webkit-scrollbar-thumb {
+        @apply bg-primary-400 rounded-full;
+    }
 
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-neon;
-  }
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-primary-500;
+    }
 }
 
 /* Component styles */
 @layer components {
 
-  /* Primary button style - Neon Glow */
-  .btn-primary {
-    @apply px-6 py-3 bg-transparent text-primary-neon font-semibold rounded-full border border-primary-neon/50 shadow-neon hover:bg-primary-neon hover:text-black hover:shadow-neon-strong transform hover:scale-105 transition-all duration-300;
-  }
+    /* Primary button style */
+    .btn-primary {
+        @apply px-6 py-3 bg-primary-500 text-white font-semibold rounded-full hover:bg-primary-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl;
+    }
 
-  /* Secondary button style - Glass */
-  .btn-secondary {
-    @apply px-6 py-3 bg-white/5 text-white font-semibold rounded-full backdrop-blur-sm border border-white/10 hover:bg-white/10 hover:border-white/30 transform hover:scale-105 transition-all duration-300;
-  }
+    /* Secondary button style */
+    .btn-secondary {
+        @apply px-6 py-3 bg-white text-primary-600 font-semibold rounded-full border-2 border-primary-500 hover:bg-primary-50 transform hover:scale-105 transition-all duration-300;
+    }
 
-  /* Section container */
-  .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
+    /* Section container */
+    .section-container {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
 
-  /* Section title */
-  .section-title {
-    @apply text-3xl md:text-5xl font-bold text-white text-center mb-4 tracking-tight;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  }
+    /* Section title */
+    .section-title {
+        @apply text-3xl md:text-4xl font-bold text-gray-800 text-center mb-4;
+    }
 
-  /* Section subtitle */
-  .section-subtitle {
-    @apply text-lg text-gray-400 text-center max-w-2xl mx-auto mb-12;
-  }
+    /* Section subtitle */
+    .section-subtitle {
+        @apply text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12;
+    }
 
-  /* Feature card - Glassmorphism */
-  .feature-card {
-    @apply bg-background-paper/60 backdrop-blur-md p-6 rounded-2xl border border-white/5 shadow-xl hover:shadow-2xl hover:bg-background-paper/80 transform hover:-translate-y-2 transition-all duration-300;
-  }
+    /* Feature card */
+    .feature-card {
+        @apply bg-white/90 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 hover:border-primary-200;
+    }
 
-  /* Gradient text */
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-neon via-primary-400 to-accent-purple bg-clip-text text-transparent;
-    filter: drop-shadow(0 0 2px rgba(20, 184, 166, 0.3));
-  }
+    /* Glass Panel */
+    .glass-panel {
+        @apply bg-white/70 backdrop-blur-lg border border-white/20 shadow-xl;
+    }
 
-  .glass-panel {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
-  }
+    /* Gradient text */
+    .gradient-text {
+        @apply bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent;
+    }
 }
 
 /* Utility styles */
 @layer utilities {
 
-  /* Animation delays */
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
+    /* Animation delays */
+    .animation-delay-200 {
+        animation-delay: 200ms;
+    }
 
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
+    .animation-delay-400 {
+        animation-delay: 400ms;
+    }
 
-  .animation-delay-600 {
-    animation-delay: 600ms;
-  }
+    .animation-delay-600 {
+        animation-delay: 600ms;
+    }
 
-  .animation-delay-800 {
-    animation-delay: 800ms;
-  }
+    .animation-delay-800 {
+        animation-delay: 800ms;
+    }
 }
